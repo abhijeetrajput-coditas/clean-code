@@ -1,0 +1,34 @@
+<div>
+  <h1>Order Processing System</h1>
+
+  <section>
+    <h2>Manage Products</h2>
+    <input [(ngModel)]="productName" placeholder="Product Name" />
+    <button (click)="addProduct()">Add Product</button>
+    
+    <h3>Product List</h3>
+    <ul>
+      <li *ngFor="let product of products">
+        {{ product }} 
+        <button (click)="removeProduct(product)">Remove</button>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Place an Order</h2>
+    <input [(ngModel)]="productName" placeholder="Product Name" />
+    <button (click)="placeOrder()">Place Order</button>
+
+    <h3>Order List</h3>
+    <ul>
+      <li *ngFor="let order of orders">
+        Order ID: {{ order.id }}, Product: {{ order.product }} 
+        <button (click)="cancelOrder(order.id)">Cancel</button>
+      </li>
+    </ul>
+  </section>
+  <span>Please add same add product name while placing the order</span>
+</div>
+
+
